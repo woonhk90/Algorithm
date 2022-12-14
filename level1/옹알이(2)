@@ -1,0 +1,31 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/133499
+function solution(babbling) {
+  var answer = 0;
+  var arr = ["ma", "ye", "woo", "aya"];
+  for (var i = 0; i < babbling.length; i++) {
+    for (var j = 0; j < arr.length; j++) {
+      babbling[i] = babbling[i]
+        .replace(arr[0], "1")
+        .replace(arr[1], "2")
+        .replace(arr[2], "3")
+        .replace(arr[3], "4");
+    }
+  }
+
+  for (var i = 0; i < babbling.length; i++) {
+    babbling[i] = babbling[i].replaceAll("11", "a");
+    babbling[i] = babbling[i].replaceAll("22", "a");
+    babbling[i] = babbling[i].replaceAll("33", "a");
+    babbling[i] = babbling[i].replaceAll("44", "a");
+    babbling[i] = babbling[i].replaceAll("1", "");
+    babbling[i] = babbling[i].replaceAll("2", "");
+    babbling[i] = babbling[i].replaceAll("3", "");
+    babbling[i] = babbling[i].replaceAll("4", "");
+    if (babbling[i] === "") {
+      answer++;
+    }
+  }
+
+  console.log("문자", babbling);
+  return answer;
+}
