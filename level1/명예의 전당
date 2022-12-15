@@ -1,0 +1,28 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/138477
+function solution(k, score) {
+  var answer = [];
+  let hof = [];
+  let min_arr = [];
+
+  let sortFn = function (x, y) {
+    return x - y;
+  };
+
+  for (let i = 0; i < score.length; i++) {
+    let bl = true;
+    if (hof.length >= k) {
+      //명예전당 4개이상이면 최소값 빼기
+      hof.sort(sortFn);
+      if (score[i] > hof[0]) {
+        hof.shift();
+      } else {
+        bl = false;
+      }
+    }
+    if (bl) {
+      hof.push(score[i]); //명예전당 점수넣기
+    }
+    answer.push(Math.min(...hof)); // 발표점수
+  }
+  return answer;
+}
