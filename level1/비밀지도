@@ -1,0 +1,17 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/17681
+function solution(n, arr1, arr2) {
+  var answer = [];
+
+  for (let i = 0; i < n; i++) {
+    let new_num = Number(arr1[i].toString(2)) + Number(arr2[i].toString(2));
+    answer.push(
+      new_num
+        .toString()
+        .replaceAll("1", "#")
+        .replaceAll("2", "#")
+        .replaceAll("0", " ")
+        .padStart(n, " ") // 문자열 공백으로 채우기
+    );
+  }
+  return answer;
+}
