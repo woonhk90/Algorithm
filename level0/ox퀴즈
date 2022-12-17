@@ -1,0 +1,22 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/120907
+function solution(quiz) {
+  var answer = [];
+  for (let i = 0; i < quiz.length; i++) {
+    let arr = quiz[i].split(" ");
+    let a = Number(arr[0]);
+    let b = arr[1];
+    let c = Number(arr[2]);
+    let d = 0;
+    if (b === "+") {
+      d = a + c;
+    } else if (b === "-") {
+      d = a - c;
+    }
+    if (Number(arr[4]) === d) {
+      answer.push("O");
+    } else {
+      answer.push("X");
+    }
+  }
+  return answer;
+}
