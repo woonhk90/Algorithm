@@ -1,0 +1,13 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/120924
+function solution(common) {
+    var answer = 0;
+    let a = common[2]-common[1]
+    if(common[1]+a === common[2]){
+        answer = common[common.length-1]+a;
+    }else if(common[1]*a===common[2]){
+        answer = common[common.length-1]*a;
+    }else{
+        answer = common[common.length-1]*common[common.length-1];
+    }
+    return answer;
+}
