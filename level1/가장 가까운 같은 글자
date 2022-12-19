@@ -1,0 +1,23 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/142086
+function solution(s) {
+  var answer = [];
+  let arr = [];
+  for (let i = 0; i < s.length; i++) {
+    if (!arr.includes(s[i])) {
+      arr.push(s[i]);
+    } else {
+      let count = 0;
+      for (let j = i - 1; j >= 0; j--) {
+        count++;
+        if (s[i] === s[j]) {
+          arr.push(count);
+          break;
+        }
+      }
+    }
+  }
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "string") arr[i] = -1;
+  }
+  return arr;
+}
