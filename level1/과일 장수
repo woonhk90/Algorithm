@@ -1,0 +1,16 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/135808
+function solution(k, m, score) {
+  //점수, 박스당개수, 총개수
+  var answer = 0;
+
+  let re_score = score.sort((a, b) => b - a);
+  let empty = [];
+  for (let i = 0; i < re_score.length; i++) {
+    empty.push(re_score[i]);
+    if ((i + 1) % m === 0) {
+      answer += Math.min(...empty) * m;
+      empty = [];
+    }
+  }
+  return answer;
+}
