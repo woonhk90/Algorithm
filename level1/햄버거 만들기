@@ -1,0 +1,16 @@
+// https://school.programmers.co.kr/learn/courses/30/lessons/133502
+function solution(s) {
+  var answer = 0;
+  let hamburger = 1231;
+  let arr = [];
+  for (let i = 0; i < s.length; i++) {
+    arr.push(s[i]);
+    if (arr.length >= 4) {
+      if (arr.slice(-4).join("") === hamburger) {
+        arr.splice(arr.length - 4, 4);
+        answer += 1;
+      }
+    }
+  }
+  return answer;
+}
