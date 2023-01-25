@@ -1,0 +1,18 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/77884
+
+function solution(left, right) {
+    var answer = 0;
+    for(let i=left; i<=right; i++){
+        let number=1;
+        let count=0;
+        while(number<i+1){
+            if(i%number==0){
+                count++;
+            }
+            number+=1;
+        }
+        if(count%2==0) answer+=i
+        else answer-=i
+    }
+    return answer;
+}
