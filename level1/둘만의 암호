@@ -1,0 +1,15 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/155652
+function solution(s, skip, index) {
+    var answer = '';
+    let arr='abcdefghijklmnopqrstuvwxyz';
+    let newArr = [...arr];
+    for(let i=0; i<skip.length; i++){
+        newArr.splice(newArr.indexOf(skip[i]),1);
+    }
+    arr=newArr.join('');
+    for(let i=0; i<s.length; i++){
+        let idx = arr.indexOf(s[i])+index;
+        answer+=arr[idx%arr.length];
+    }
+    return answer;
+}
