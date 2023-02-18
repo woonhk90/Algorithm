@@ -1,0 +1,14 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/132267
+function solution(a, b, n) {
+    var answer = 0;
+    let etc=0;//나머지
+    
+    while(true){  
+        if(n%a!=0){etc=n%a;}
+        n = Math.floor(n/a)*b;
+        answer+=n;
+        if(n%a!=0){n+=etc;etc=0;}
+        if(n<2){break;}
+    }
+    return answer;
+}
