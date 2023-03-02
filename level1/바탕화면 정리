@@ -1,0 +1,20 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/161990
+function solution(wallpaper) {
+    let col=wallpaper.length
+    let row=wallpaper[0].length
+    let colArr=[]
+    let rowArr=[]
+    for(let i=0; i<col; i++){
+        for(let j=0; j<row; j++){
+         if(wallpaper[i][j]==='#'){
+            colArr.push(i)
+            rowArr.push(j)
+         }
+        }
+    }
+    let minCol=Math.min(...colArr);
+    let minRow=Math.min(...rowArr);
+    let maxCol=Math.max(...colArr);
+    let maxRow=Math.max(...rowArr);
+    return [minCol,minRow,maxCol+1,maxRow+1];
+}
