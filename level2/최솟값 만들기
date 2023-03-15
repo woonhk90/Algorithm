@@ -1,0 +1,19 @@
+//https://school.programmers.co.kr/learn/courses/30/lessons/12941
+function solution(A,B){
+    var answer = 0;
+    const sortFn1 = function(a, b)  {
+      return a-b;
+    }
+    const sortFn2 = function(a, b)  {
+      return b-a;
+    }
+    const new_A = A.sort(sortFn1)
+    const new_B = B.sort(sortFn2)
+    while(true){
+        if(new_A.length===0){break;}
+        answer+=new_A[0]*new_B[0];
+        new_A.shift()
+        new_B.shift()
+    }
+    return answer;
+}
